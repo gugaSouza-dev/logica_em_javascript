@@ -1,7 +1,17 @@
 let prompt = require('prompt-sync')();
+let process = require('process');
 
 let exercicio = prompt("Informe o numero do exercicio: ")
 let numero
+
+function numeroValidacao(mensagem) {
+	numero = parseFloat(prompt(mensagem))
+	if (isNaN(numero)){
+		console.log("O valor informado não é um numero. Por favor, tente novamente.");
+		process.exit(-1)
+	}
+	return (numero)
+}
 
 switch (exercicio) {
 	case "1":
@@ -86,8 +96,10 @@ switch (exercicio) {
 		// Faça um programa receba dois valores e imprima qual é o maior
 		// número digitado.
 
-		let numeroUm = parseInt(prompt("digite o primeiro numero: "))
-		let numeroDois = parseInt(prompt("digite o segundo numero: "))
+		console.log("=====Avalia qual é o maior entre dois numeros=====");
+
+		let numeroUm = numeroValidacao("digite o primeiro numero: ")
+		let numeroDois = numeroValidacao("digite o segundo numero: ")
 
 		if (numeroUm > numeroDois)
 			console.log(`Seu numero maior é: ${numeroUm}.`)
@@ -107,28 +119,22 @@ switch (exercicio) {
 		// para média superior ou igual a 7,0 RECUPERAÇÃO para notas entre
 		// 5.0 e 7,0 ou a mensagem de REPROVADO para média inferior a 5,0.
 
-		function inputChecker(nota) {
-			if (isNaN(nota) || nota < 0 || nota > 10){
+		function notaValidacao(mensagem) {
+			numero = parseFloat(prompt(mensagem))
+
+			if (isNaN(numero) || numero < 0 || numero > 10){
 				console.log("A nota informada não foi apresentada corretamente. Por favor, tente outra vez.");
-				return (-1)
+				process.exit(-1)
 			}
-			return (nota)
+			return (numero)
 		}
 
 		console.log("======Calculadora de médias======\nApresente os valores entre 0 e 10");
 
-		let notaUm = inputChecker(parseFloat(prompt("Digite a primeira nota: ")))
-		if (notaUm == -1)
-			return (-1)
-		let notaDois = inputChecker(parseFloat(prompt("Digite a segunda nota: ")))
-		if (notaDois == -1)
-			return (-1)
-		let notaTres = inputChecker(parseFloat(prompt("Digite a terceira nota: ")))
-		if (notaTres == -1)
-			return (-1)
-		let notaQuatro = inputChecker(parseFloat(prompt("Digite a quarta nota: ")))
-		if (notaQuatro == -1)
-			return (-1)
+		let notaUm = notaValidacao(("Digite a primeira nota: "))
+		let notaDois = notaValidacao(("Digite a segunda nota: "))
+		let notaTres = notaValidacao(("Digite a terceira nota: "))
+		let notaQuatro = notaValidacao(("Digite a quarta nota: "))
 		
 		let media = (notaUm + notaDois + notaTres + notaQuatro) / 4
 		
