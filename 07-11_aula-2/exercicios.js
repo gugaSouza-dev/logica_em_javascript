@@ -22,15 +22,16 @@ switch (exercicio) {
 		// salário acrescido de 10%. Ao final exiba o nome, o cargo e o salário
 		// desse funcionário.
 
+		console.log("===== Calcula acréscimo de 10% em valores menores que 1000 =====");
+
 		let nome = prompt("Digite seu nome: ")
 		let cargo = prompt("Digite seu cargo: ")
-		let salarioBase = parseFloat(prompt("Digite seu salario: "))
+		let salarioBase = numeroValidacao("Digite seu salario: ")
 		let salarioAcrescido
 
 		if (salarioBase < 1000) {
-			salarioAcrescido = salarioBase + (salarioBase * 0.1)
-
-			console.log(`Nome: ${nome} .\nCargo: ${cargo}.`)
+			salarioAcrescido = salarioBase + (salarioBase / 10)
+			console.log(`Nome: ${nome}.\nCargo: ${cargo}.`)
 			console.log(`Salario base: ${salarioBase.toFixed(2)}.\nSalario acrescido: ${parseFloat(salarioAcrescido).toFixed(2)}.`)
 		}
 		else{
@@ -47,13 +48,15 @@ switch (exercicio) {
 		// salário de um funcionário e imprima o valor do salário reajustado ou
 		// uma mensagem caso o funcionário não tenha direito a aumento.
 
-		let salario = parseInt(prompt("Digite seu salario: "))
+		console.log("===== Checa se um valor receberá um acréscimo ou não. =====");
+
+		let salario = numeroValidacao("Digite seu salario: ")
 
 		if (salario < 500) {
 			salario += salario / 30
 			console.log("Seu salario foi reajustado para: " + salario.toFixed(2) + ".")
 		} else
-			console.log("Você não tem direito ao reajuste")
+			console.log("Você não tem direito ao reajuste.")
 
 		break;
 
@@ -63,7 +66,9 @@ switch (exercicio) {
 		// Faça um programa que receba um número inteiro do usuário e informe
 		// se este número é positivo ou negativo.
 
-		numero = parseInt(prompt("Digite um numero: "))
+		console.log("===== Checa se o seu numero é negativo, positivo ou neutro. =====");
+
+		numero = numeroValidacao("Digite um numero: ")
 
 		if (numero < 0)
 			console.log("Seu numero é negativo.")
@@ -79,7 +84,8 @@ switch (exercicio) {
 		// Faça um programa que receba um número do usuário e informe
 		// se este número é par ou ímpar.
 
-		numero = parseInt(prompt("digite um numero: "))
+		console.log("===== Checa se um numero é par ou impar. =====");
+		numero = numeroValidacao("Digite um numero: ")
 
 		let restante = numero % 2
 
@@ -96,10 +102,10 @@ switch (exercicio) {
 		// Faça um programa receba dois valores e imprima qual é o maior
 		// número digitado.
 
-		console.log("=====Avalia qual é o maior entre dois numeros=====");
+		console.log("===== Avalia qual é o maior entre dois numeros =====");
 
-		let numeroUm = numeroValidacao("digite o primeiro numero: ")
-		let numeroDois = numeroValidacao("digite o segundo numero: ")
+		let numeroUm = numeroValidacao("Digite o primeiro numero: ")
+		let numeroDois = numeroValidacao("Digite o segundo numero: ")
 
 		if (numeroUm > numeroDois)
 			console.log(`Seu numero maior é: ${numeroUm}.`)
@@ -129,7 +135,7 @@ switch (exercicio) {
 			return (numero)
 		}
 
-		console.log("======Calculadora de médias======\nApresente os valores entre 0 e 10");
+		console.log("===== Calculadora de médias =====\nApresente os valores entre 0 e 10");
 
 		let notaUm = notaValidacao(("Digite a primeira nota: "))
 		let notaDois = notaValidacao(("Digite a segunda nota: "))
