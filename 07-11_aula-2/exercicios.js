@@ -107,24 +107,26 @@ switch (exercicio) {
 		// para média superior ou igual a 7,0 RECUPERAÇÃO para notas entre
 		// 5.0 e 7,0 ou a mensagem de REPROVADO para média inferior a 5,0.
 
-		function notaVazia(nota) {
-			if (isNaN(nota)){
-				console.log("Uma (ou mais) nota(s) não foi apresentada corretamente. Por favor, tente outra vez.");
+		function inputChecker(nota) {
+			if (isNaN(nota) || nota < 0 || nota > 10){
+				console.log("A nota informada não foi apresentada corretamente. Por favor, tente outra vez.");
 				return (-1)
 			}
 			return (nota)
 		}
 
-		let notaUm = notaVazia(parseFloat(prompt("digite a primeira nota: ")))
+		console.log("======Calculadora de médias======\nApresente os valores entre 0 e 10");
+
+		let notaUm = inputChecker(parseFloat(prompt("Digite a primeira nota: ")))
 		if (notaUm == -1)
 			return (-1)
-		let notaDois = notaVazia(parseFloat(prompt("digite a segunda nota: ")))
+		let notaDois = inputChecker(parseFloat(prompt("Digite a segunda nota: ")))
 		if (notaDois == -1)
 			return (-1)
-		let notaTres = notaVazia(parseFloat(prompt("digite a terceira nota: ")))
+		let notaTres = inputChecker(parseFloat(prompt("Digite a terceira nota: ")))
 		if (notaTres == -1)
 			return (-1)
-		let notaQuatro = notaVazia(parseFloat(prompt("digite a quarta nota: ")))
+		let notaQuatro = inputChecker(parseFloat(prompt("Digite a quarta nota: ")))
 		if (notaQuatro == -1)
 			return (-1)
 		
