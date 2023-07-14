@@ -87,9 +87,9 @@ switch (exercicio) {
 		let numeroTres = numeroValidacao("Insira o terceiro número: ")
 
 		if (numeroUm > numeroDois || numeroDois > numeroTres)
-			meuErro("Seus números não estão em ordem crescente.")
-
-		console.log("Seus números estão em ordem crescente.");
+			console.log("Seus números não estão em ordem crescente.")
+		else
+			console.log("Seus números estão em ordem crescente.");
 
 		break;
 
@@ -101,7 +101,9 @@ switch (exercicio) {
 
 		console.log("Validação de idade.");
 
-		let idade = numeroValidacao("Informe a sua idade: ")
+		let anoNascimento = numeroValidacao("Informe a sua data de nascimento: ")
+		let anoAtual = numeroValidacao("Informe o ano que estamos: ")
+		let idade = anoAtual - anoNascimento
 
 		if (idade >= 18)
 			console.log("Parabens! Você é maior de idade e pode ser preso!");
