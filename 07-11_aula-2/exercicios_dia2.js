@@ -1,0 +1,178 @@
+let prompt = require('prompt-sync')();
+let process = require('process');
+
+
+let exercicio = prompt("Informe o numero do exercicio: ")
+let numero
+
+function numeroValidacao(mensagem) {
+	numero = parseFloat(prompt(mensagem))
+	if (isNaN(numero)){
+		console.log("O valor informado não é um numero. Por favor, tente novamente.");
+		process.exit(-1)
+	}
+	return (numero)
+}
+
+switch (exercicio) {
+	case "1":
+		// Exercício 1: Verificação de login
+		// Escreva um programa que solicita ao usuário um nome de usuário e uma senha. Verifique se o
+		// nome de usuário é &quot;admin&quot; e a senha é &quot;senha123&quot;. Exiba uma mensagem indicando se o login
+		// foi bem-sucedido ou não.
+
+		console.log("Login do Ademir.");
+
+		let usuario = prompt("Informe seu usuário: ")
+		let senha = prompt("Informe sua senha: ")
+
+		if (usuario == "admin" && senha == "senha123")
+			console.log("Login feito com sucesso. Bem vindo, Ademir.");
+		else
+			console.log("Você não é o Ademir.");
+
+		break;
+
+	case "2":
+		// Exercício 2: Verificação de dia da semana
+		// Escreva um programa que solicita ao usuário um número de 1 a 7 representando um dia da
+		// semana e exibe o nome correspondente a esse dia. Considere que 1 representa segunda-feira,
+		// 2 representa terça-feira e assim por diante.
+
+		console.log("Dias da Semana.");
+
+		numero = numeroValidacao("Informe um numero de 1 a 7: ")
+		
+		switch (numero) {
+			case 1:
+				console.log("Segunda-feira.");
+				break;
+			case 2:
+				console.log("Terça-feira.");
+				break;
+			case 3:
+				console.log("Quarta-feira.");
+				break;
+			case 4:
+				console.log("Quinta-feira.");
+				break;
+			case 5:
+				console.log("Sexta-feira.");
+				break;
+			case 6:
+				console.log("Sabado.");
+				break;
+			case 7:
+				console.log("Domingo.");
+				break;
+		
+			default:
+				console.log("O numero informado não corresponde á um dia da semana.");
+				break;
+		}
+
+		break;
+
+	case "3":
+
+		// Exercício 3: Verificação de números em ordem crescente
+		// Escreva um programa que solicita três números ao usuário e verifica se eles estão em ordem
+		// crescente. Exibindo uma mensagem indicando se os números estão em ordem crescente ou
+		// não.
+
+		console.log("Numeros em ordem crescente.");
+
+		let numeroUm = numeroValidacao("Insira o primeiro número: ")
+		let numeroDois = numeroValidacao("Insira o segundo número: ")
+		let numeroTres = numeroValidacao("Insira o terceiro número: ")
+
+		if (numeroUm > numeroDois || numeroDois > numeroTres)
+			meuErro("Seus números não estão em ordem crescente.")
+
+		console.log("Seus números estão em ordem crescente.");
+
+		break;
+
+	case "4":
+
+		// Exercício 4: Verificação de idade
+		// Escreva um programa que solicita o ano de nascimento de uma pessoa e verifica se ela é maior
+		// de 18 anos. Exiba uma mensagem indicando se a pessoa é maior de idade ou não.
+
+		console.log("Validação de idade.");
+
+		let idade = numeroValidacao("Informe a sua idade: ")
+
+		if (idade >= 18)
+			console.log("Parabens! Você é maior de idade e pode ser preso!");
+		else
+			console.log("Parabéns! Você ainda não é um maior de idade. Aproveite, pois vai acabar.");
+
+		break;
+	
+	case "5":
+
+		// Exercício 5: Cálculo de desconto progressivo
+		// Imagine uma loja de roupas que dê um desconto ao cliente, dependendo do valor que ele
+		// pague. Faça um programa para loja, que solicite o valor total da compra ao usuário e assim,
+		// aplique um desconto de acordo com o valor total da compra. Siga a tabela:
+		// Valor total da compra até R$ 100,00: sem desconto.
+		// Valor total da compra de R$ 100,01 a R$ 200,00: desconto de 10%.
+		// Valor total da compra acima de R$ 200,00: desconto de 20%.
+		// Exiba o valor final da compra com o desconto aplicado.
+
+		console.log("Calculador de descontos.");
+
+		valor = numeroValidacao("Informe o valor total da compra: ")
+
+		console.log(`Valor da compra: ${valor}.`);
+
+		if (valor > 100 || valor <= 200)
+			valor += valor / 10
+		else if (valor > 200)
+			valor += valor / 20
+
+		console.log(`Valor da compra com desconto: ${valor.toFixed(2)}.`);
+
+		break;
+		
+	case "6":
+
+		// Exercício 6: Cálculo de IMC
+		// Escreva um programa que solicita ao usuário seu peso em quilogramas e sua altura em metros.
+		// Em seguida, calcule o Índice de Massa Corporal (IMC) utilizando a fórmula: IMC = peso / (altura
+		// * altura). Com base no resultado, exiba uma mensagem indicando a faixa de peso em que o
+		// usuário se encontra, de acordo com a tabela a seguir:
+		// IMC menor que 18.5: Abaixo do peso
+		// IMC de 18.5 a 24.9: Peso normal
+		
+		// IMC de 25.0 a 29.9: Sobrepeso
+		// IMC de 30.0 a 34.9: Obesidade grau 1
+		// IMC de 35.0 a 39.9: Obesidade grau 2
+		// IMC maior ou igual a 40.0: Obesidade grau 3
+
+		console.log("Calculadora de IMC");
+
+		let peso = numeroValidacao("Informe o peso em KG: ")
+		let altura = numeroValidacao("Informe a altura em metros: ")
+		let imc = peso / (altura * altura)
+		
+		if (imc < 18.5)
+			console.log("Abaixo do peso.");
+		else if (imc < 24.9)
+			console.log("Peso normal.");
+		else if (imc < 29.9)
+			console.log("Sobrepeso");
+		else if (imc < 34.9)
+			console.log("Obesidade grau 1");
+		else if (imc < 39.9)
+			console.log("Obesidade grau 2");
+		else
+			console.log("Obesidade grau 3");
+		break;
+
+	default:
+		console.log("Exercicio não encontrado. Tente um numero de 01 a 06")
+		break;
+}
+
