@@ -130,9 +130,9 @@ switch (exercicio) {
 		console.log(`Valor da compra: ${valor}.`);
 
 		if (valor > 100 || valor <= 200)
-			valor += valor / 10
+			valor -= valor / 10
 		else if (valor > 200)
-			valor += valor / 20
+			valor -= valor / 20
 
 		console.log(`Valor da compra com desconto: ${valor.toFixed(2)}.`);
 
