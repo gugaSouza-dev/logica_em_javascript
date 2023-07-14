@@ -154,6 +154,6 @@ switch (exercicio) {
 		break;
 
 	default:
-		console.log("Exercicio não encontrado. Tente um numero de 01 a 06")
+		console.log("Exercicio não encontrado. Tente um numero de 1 a 6")
 		break;
 }
