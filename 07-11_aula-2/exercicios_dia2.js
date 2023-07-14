@@ -29,7 +29,7 @@ switch (exercicio) {
 		if (usuario == "admin" && senha == "senha123")
 			console.log("Login feito com sucesso. Bem vindo, Ademir.");
 		else
-			console.log("Você não é o Ademir.");
+			console.log("Você não é o Ademir. Login incorreto.");
 
 		break;
 
@@ -41,9 +41,9 @@ switch (exercicio) {
 
 		console.log("Dias da Semana.");
 
-		numero = numeroValidacao("Informe um numero de 1 a 7: ")
+		dia = numeroValidacao("Informe um numero de 1 a 7: ")
 		
-		switch (numero) {
+		switch (dia) {
 			case 1:
 				console.log("Segunda-feira.");
 				break;
@@ -80,7 +80,7 @@ switch (exercicio) {
 		// crescente. Exibindo uma mensagem indicando se os números estão em ordem crescente ou
 		// não.
 
-		console.log("Numeros em ordem crescente.");
+		console.log("Checa ordenação de três numeros.");
 
 		let numeroUm = numeroValidacao("Insira o primeiro número: ")
 		let numeroDois = numeroValidacao("Insira o segundo número: ")
@@ -88,8 +88,10 @@ switch (exercicio) {
 
 		if (numeroUm > numeroDois || numeroDois > numeroTres)
 			console.log("Seus números não estão em ordem crescente.")
-		else
+		else if (numeroUm < numeroDois || numeroDois < numeroTres)
 			console.log("Seus números estão em ordem crescente.");
+		else
+			console.log("Seus numeros são iguais.");
 
 		break;
 
