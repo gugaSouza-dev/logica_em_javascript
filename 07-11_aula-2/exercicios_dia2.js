@@ -16,10 +16,13 @@ function numeroValidacao(mensagem) {
 
 switch (exercicio) {
 	case "1":
-		// Exercício 1: Verificação de login
-		// Escreva um programa que solicita ao usuário um nome de usuário e uma senha. Verifique se o
-		// nome de usuário é &quot;admin&quot; e a senha é &quot;senha123&quot;. Exiba uma mensagem indicando se o login
-		// foi bem-sucedido ou não.
+
+		/*
+		Exercício 1: Verificação de login
+		Escreva um programa que solicita ao usuário um nome de usuário e uma senha. Verifique se o
+		nome de usuário é &quot;admin&quot; e a senha é &quot;senha123&quot;. Exiba uma mensagem indicando se o login
+		foi bem-sucedido ou não.
+		*/
 
 		console.log("Login do Ademir.");
 
@@ -34,10 +37,13 @@ switch (exercicio) {
 		break;
 
 	case "2":
-		// Exercício 2: Verificação de dia da semana
-		// Escreva um programa que solicita ao usuário um número de 1 a 7 representando um dia da
-		// semana e exibe o nome correspondente a esse dia. Considere que 1 representa segunda-feira,
-		// 2 representa terça-feira e assim por diante.
+
+		/*
+		Exercício 2: Verificação de dia da semana
+		Escreva um programa que solicita ao usuário um número de 1 a 7 representando um dia da
+		semana e exibe o nome correspondente a esse dia. Considere que 1 representa segunda-feira,
+		2 representa terça-feira e assim por diante.
+		*/
 
 		console.log("Dias da Semana.");
 
@@ -75,10 +81,11 @@ switch (exercicio) {
 
 	case "3":
 
-		// Exercício 3: Verificação de números em ordem crescente
-		// Escreva um programa que solicita três números ao usuário e verifica se eles estão em ordem
-		// crescente. Exibindo uma mensagem indicando se os números estão em ordem crescente ou
-		// não.
+		/*
+		Exercício 3: Verificação de números em ordem crescente
+		Escreva um programa que solicita três números ao usuário e verifica se eles estão em ordem
+		crescente. Exibindo uma mensagem indicando se os números estão em ordem crescente ou não.
+		*/
 
 		console.log("Checa ordenação de três numeros.");
 
@@ -97,9 +104,11 @@ switch (exercicio) {
 
 	case "4":
 
-		// Exercício 4: Verificação de idade
-		// Escreva um programa que solicita o ano de nascimento de uma pessoa e verifica se ela é maior
-		// de 18 anos. Exiba uma mensagem indicando se a pessoa é maior de idade ou não.
+		/*
+		Exercício 4: Verificação de idade
+		Escreva um programa que solicita o ano de nascimento de uma pessoa e verifica se ela é maior
+		de 18 anos. Exiba uma mensagem indicando se a pessoa é maior de idade ou não.
+		*/
 
 		console.log("Validação de idade.");
 
@@ -116,14 +125,19 @@ switch (exercicio) {
 	
 	case "5":
 
-		// Exercício 5: Cálculo de desconto progressivo
-		// Imagine uma loja de roupas que dê um desconto ao cliente, dependendo do valor que ele
-		// pague. Faça um programa para loja, que solicite o valor total da compra ao usuário e assim,
-		// aplique um desconto de acordo com o valor total da compra. Siga a tabela:
-		// Valor total da compra até R$ 100,00: sem desconto.
-		// Valor total da compra de R$ 100,01 a R$ 200,00: desconto de 10%.
-		// Valor total da compra acima de R$ 200,00: desconto de 20%.
-		// Exiba o valor final da compra com o desconto aplicado.
+		/*
+		Exercício 5: Cálculo de desconto progressivo
+
+		Imagine uma loja de roupas que dê um desconto ao cliente, dependendo do valor que ele
+		pague. Faça um programa para loja, que solicite o valor total da compra ao usuário e assim,
+		aplique um desconto de acordo com o valor total da compra. Siga a tabela:
+
+		Valor total da compra até R$ 100,00: sem desconto.
+		Valor total da compra de R$ 100,01 a R$ 200,00: desconto de 10%.
+		Valor total da compra acima de R$ 200,00: desconto de 20%.
+
+		Exiba o valor final da compra com o desconto aplicado.
+		*/
 
 		console.log("Calculador de descontos.");
 
@@ -142,18 +156,20 @@ switch (exercicio) {
 		
 	case "6":
 
-		// Exercício 6: Cálculo de IMC
-		// Escreva um programa que solicita ao usuário seu peso em quilogramas e sua altura em metros.
-		// Em seguida, calcule o Índice de Massa Corporal (IMC) utilizando a fórmula: IMC = peso / (altura
-		// * altura). Com base no resultado, exiba uma mensagem indicando a faixa de peso em que o
-		// usuário se encontra, de acordo com a tabela a seguir:
-		// IMC menor que 18.5: Abaixo do peso
-		// IMC de 18.5 a 24.9: Peso normal
+		/*
+		Exercício 6: Cálculo de IMC
+		Escreva um programa que solicita ao usuário seu peso em quilogramas e sua altura em metros.
+		Em seguida, calcule o Índice de Massa Corporal (IMC) utilizando a fórmula: IMC = peso / (altura
+		* altura). Com base no resultado, exiba uma mensagem indicando a faixa de peso em que o
+		usuário se encontra, de acordo com a tabela a seguir:
+		IMC menor que 18.5: Abaixo do peso
+		IMC de 18.5 a 24.9: Peso normal
 		
-		// IMC de 25.0 a 29.9: Sobrepeso
-		// IMC de 30.0 a 34.9: Obesidade grau 1
-		// IMC de 35.0 a 39.9: Obesidade grau 2
-		// IMC maior ou igual a 40.0: Obesidade grau 3
+		IMC de 25.0 a 29.9: Sobrepeso
+		IMC de 30.0 a 34.9: Obesidade grau 1
+		IMC de 35.0 a 39.9: Obesidade grau 2
+		IMC maior ou igual a 40.0: Obesidade grau 3
+		*/
 
 		console.log("Calculadora de IMC");
 
