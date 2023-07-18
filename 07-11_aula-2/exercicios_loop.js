@@ -12,7 +12,7 @@ let branco = '\u001b[' + 37 + ';1m'
 let numero;
 
 function mensagemCor(cor, mensagem) {
-	return (cor + mensagem + branco);
+	return (cor + mensagem + '\x1b[0m');
 }
 
 function numeroValidacao(mensagem) {
@@ -60,7 +60,7 @@ switch (exercicio) {
 		qualquer escolhido pelo usuário até o 10.
 		*/
 		console.log(verde + "===== Tabuada =====");
-		let multiplicador = numeroValidacao(amarelo + "Informe o número que deseja ser multiplicado: " + branco)
+		let multiplicador = numeroValidacao(amarelo + "Informe o número que deseja ser multiplicado: " +  '\x1b[0m')
 		for (let i = 0; i <= 10; i++)
 			console.log(mensagemCor(roxo, `${multiplicador} * ${i} =`), mensagemCor(azul, `${multiplicador * i}`));
 		console.log(mensagemCor(verde, "Fim."));
