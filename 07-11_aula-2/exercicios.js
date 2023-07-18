@@ -16,11 +16,13 @@ function numeroValidacao(mensagem) {
 switch (exercicio) {
 	case "1":
 
-		// EXERCICIO 1
-		// Faça um programa que receba o nome, cargo e salário de um
-		// funcionário. Se o funcionário ganhar abaixo de 1000 reais, calcule o
-		// salário acrescido de 10%. Ao final exiba o nome, o cargo e o salário
-		// desse funcionário.
+		/*
+		Exercício 1:
+		Faça um programa que receba o nome, cargo e salário de um
+		funcionário. Se o funcionário ganhar abaixo de 1000 reais, calcule o
+		salário acrescido de 10%. Ao final exiba o nome, o cargo e o salário
+		desse funcionário.
+		*/
 
 		console.log("===== Calcula acréscimo de 10% em valores menores que 1000 =====");
 
@@ -42,11 +44,13 @@ switch (exercicio) {
 
 	case "2":
 
-		// EXERICIO 2
-		// Uma empresa decide dar aumento de 30% aos funcionários cujo
-		// salário é inferior a 500 reais. Escreva um programa que receba o
-		// salário de um funcionário e imprima o valor do salário reajustado ou
-		// uma mensagem caso o funcionário não tenha direito a aumento.
+		/*
+		Exercício 2
+		Uma empresa decide dar aumento de 30% aos funcionários cujo
+		salário é inferior a 500 reais. Escreva um programa que receba o
+		salário de um funcionário e imprima o valor do salário reajustado ou
+		uma mensagem caso o funcionário não tenha direito a aumento.
+		*/
 
 		console.log("===== Checa se um valor receberá um acréscimo ou não. =====");
 
@@ -62,9 +66,11 @@ switch (exercicio) {
 
 	case "3":
 
-		// EXERICIO 3
-		// Faça um programa que receba um número inteiro do usuário e informe
-		// se este número é positivo ou negativo.
+		/*
+		Exercício 3
+		Faça um programa que receba um número inteiro do usuário e informe
+		se este número é positivo ou negativo.
+		*/
 
 		console.log("===== Checa se o seu numero é negativo, positivo ou neutro. =====");
 
@@ -80,9 +86,11 @@ switch (exercicio) {
 
 	case "4":
 
-		// EXERICIO 4
-		// Faça um programa que receba um número do usuário e informe
-		// se este número é par ou ímpar.
+		/*
+		Exercício 4
+		Faça um programa que receba um número do usuário e informe
+		se este número é par ou ímpar.
+		*/
 
 		console.log("===== Checa se um numero é par ou impar. =====");
 		numero = numeroValidacao("Digite um numero: ")
@@ -98,9 +106,11 @@ switch (exercicio) {
 
 	case "5":
 
-		// EXERCICIO 5
-		// Faça um programa receba dois valores e imprima qual é o maior
-		// número digitado.
+		/*
+		Exercício 5
+		Faça um programa receba dois valores e imprima qual é o maior
+		número digitado.
+		*/
 
 		console.log("===== Avalia qual é o maior entre dois numeros =====");
 
@@ -119,11 +129,13 @@ switch (exercicio) {
 
 	case "6":
 
-		// EXERCICIO 6
-		// Faça um programa que receba 4 notas de um aluno, calcule e
-		// imprima a média aritmética das notas e a mensagem de APROVADO
-		// para média superior ou igual a 7,0 RECUPERAÇÃO para notas entre
-		// 5.0 e 7,0 ou a mensagem de REPROVADO para média inferior a 5,0.
+		/*
+		Exercício 6
+		Faça um programa que receba 4 notas de um aluno, calcule e
+		imprima a média aritmética das notas e a mensagem de APROVADO
+		para média superior ou igual a 7,0 RECUPERAÇÃO para notas entre
+		5.0 e 7,0 ou a mensagem de REPROVADO para média inferior a 5,0.
+		*/
 
 		function notaValidacao(mensagem) {
 			numero = parseFloat(prompt(mensagem))
