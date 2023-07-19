@@ -23,7 +23,30 @@ function numeroValidacao(mensagem) {
 	return (numero)
 }
 
-let exercicio = numeroValidacao(mensagemCor(roxo, "Informe o numero do exercicio (1 a 10): "))
+function asciiMensagem() {
+	console.log(ciano + "\n██╗      ██████╗  ██████╗ ██████╗ ██╗███╗   ██╗ ██████╗ ███████╗"
+					+ "\n██║     ██╔═══██╗██╔═══██╗██╔══██╗██║████╗  ██║██╔════╝ ██╔════╝"
+					+ "\n██║     ██║   ██║██║   ██║██████╔╝██║██╔██╗ ██║██║  ███╗███████╗"
+					+ "\n██║     ██║   ██║██║   ██║██╔═══╝ ██║██║╚██╗██║██║   ██║╚════██║"
+					+ "\n███████╗╚██████╔╝╚██████╔╝██║     ██║██║ ╚████║╚██████╔╝███████║"
+					+ "\n╚══════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝"
+					+ "\n                                                                "
+					+ "\n1 = Numeros de 1 a 10"
+					+ "\n2 = Numeros pares de 1 a 10"
+					+ "\n3 = Numeros ímpares de 0 a 50"
+					+ "\n4 = ===== Tabuada ====="
+					+ "\n5 = Sequência de Febonacci"
+					+ "\n6 = Numeros pares de 0 a 20"
+					+ "\n7 = Soma dos numeros de 1 a 100"
+					+ "\n8 = ===== Validação de idade ====="
+					+ "\n9 = ===== Contagem regressiva ====="
+					+ "\n10 = ===== Loop infinito de zeros =====\n");
+}
+
+asciiMensagem();
+
+let exercicio = numeroValidacao(roxo + mensagemCor(amarelo, "Informe o numero do exercicio (1 a 10): "))
+
 
 switch (exercicio) {
 	case 1:
@@ -59,7 +82,7 @@ switch (exercicio) {
 		qualquer escolhido pelo usuário até o 10.
 		*/
 		console.log(verde + "===== Tabuada =====");
-		let multiplicador = numeroValidacao(amarelo + "Informe o número que deseja ser multiplicado: " +  '\x1b[0m')
+		let multiplicador = numeroValidacao(amarelo + "Informe o número que deseja ser multiplicado: ")
 		for (let i = 0; i <= 10; i++)
 			console.log(mensagemCor(roxo, `${multiplicador} * ${i} =`), mensagemCor(azul, `${multiplicador * i}`));
 		console.log(mensagemCor(verde, "Fim."));
