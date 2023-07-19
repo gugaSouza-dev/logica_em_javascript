@@ -17,7 +17,8 @@ function mensagemCor(cor, mensagem) {
 function numeroValidacao(mensagem) {
 	numero = parseFloat(prompt(mensagem))
 	if (isNaN(numero)){
-		console.log(mensagemCor(vermelho, "O valor informado não é um numero. Por favor, tente novamente."));
+		console.log(mensagemCor(vermelho, 
+			"O valor informado não é um numero. Por favor, tente novamente."));
 		process.exit(-1)
 	}
 	return (numero)
@@ -48,7 +49,8 @@ function asciiMensagem() {
 
 asciiMensagem();
 
-let exercicio = numeroValidacao(roxo + mensagemCor(amarelo, "Informe o numero do exercicio (1 a 10): "))
+let exercicio = numeroValidacao(roxo + mensagemCor(amarelo, 
+	"Informe o numero do exercicio (1 a 10): "))
 
 
 switch (exercicio) {
@@ -85,9 +87,11 @@ switch (exercicio) {
 		qualquer escolhido pelo usuário até o 10.
 		*/
 		console.log(verde + "===== Tabuada =====");
-		let multiplicador = numeroValidacao(amarelo + "Informe o número que deseja ser multiplicado: ")
+		let multiplicador = numeroValidacao(amarelo + 
+			"Informe o número que deseja ser multiplicado: ")
 		for (let i = 0; i <= 10; i++)
-			console.log(mensagemCor(roxo, `${multiplicador} * ${i} =`), mensagemCor(azul, `${multiplicador * i}`));
+			console.log(mensagemCor(roxo, `${multiplicador} * ${i} =`), 
+				(azul, `${multiplicador * i}`));
 		console.log(mensagemCor(verde, "Fim."));
 		break;
 	case 5:
