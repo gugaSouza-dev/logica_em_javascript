@@ -2,17 +2,49 @@ let prompt = require('prompt-sync')();
 let process = require('process');
 
 
-let exercicio = prompt("Informe o numero do exercicio: ")
-let numero
+let vermelho = '\u001b[' + 31 + ';1m'
+let verde = '\u001b[' + 32 + ';1m'
+let amarelo = '\u001b[' + 33 + ';1m'
+let azul = '\u001b[' + 34 + ';1m'
+let roxo = '\u001b[' + 35 + ';1m'
+let ciano = '\u001b[' + 36 + ';1m'
+
+let numero;
+
+function mensagemCor(cor, mensagem) {
+	return (cor + mensagem + '\x1b[0m');
+}
 
 function numeroValidacao(mensagem) {
 	numero = parseFloat(prompt(mensagem))
 	if (isNaN(numero)){
-		console.log("O valor informado não é um numero. Por favor, tente novamente.");
+		console.log(mensagemCor(vermelho, "O valor informado não é um numero. Por favor, tente novamente."));
 		process.exit(-1)
 	}
 	return (numero)
 }
+
+function asciiMensagem() {
+	console.log(azul
+					+ "\n   ____                _ _ _   _                   _       ____            _     ___ ___ "
+					+ "\n  / ___|___  _ __   __| (_) |_(_) ___  _ __   __ _| |___  |  _ \\ __ _ _ __| |_  |_ _|_ _|"
+					+ "\n | |   / _ \\| '_ \\ / _` | | __| |/ _ \\| '_ \\ / _` | / __| | |_) / _` | '__| __|  | | | | "
+					+ roxo
+					+ "\n | |__| (_) | | | | (_| | | |_| | (_) | | | | (_| | \\__ \\ |  __/ (_| | |  | |_   | | | | "
+					+ "\n  \\____\\___/|_| |_|\\__,_|_|\\__|_|\\___/|_| |_|\\__,_|_|___/ |_|   \\__,_|_|   \\__| |___|___|"
+					+ verde + '\n'
+					+ "\n1 = Login do Ademir"
+					+ "\n2 = Dias da Semana"
+					+ "\n3 = Checa ordenação de três numeros"
+					+ "\n4 = Validação de idade"
+					+ "\n5 = Calculador de descontos"
+					+ "\n6 = Calculadora de IMC\n");
+}
+
+asciiMensagem();
+
+let exercicio = numeroValidacao(roxo + mensagemCor(amarelo, "Informe o numero do exercicio (1 a 6): "))
+
 
 switch (exercicio) {
 	case "1":
