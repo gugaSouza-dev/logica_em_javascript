@@ -43,7 +43,7 @@ function asciiMensagem() {
 
 asciiMensagem();
 
-let exercicio = numeroValidacao(roxo + mensagemCor(amarelo, "Informe o numero do exercicio (1 a 6): "))
+let exercicio = numeroValidacao(amarelo, "Informe o numero do exercicio (1 a 6): ")
 
 
 switch (exercicio) {

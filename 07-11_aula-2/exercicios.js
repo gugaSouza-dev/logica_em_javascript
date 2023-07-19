@@ -1,20 +1,59 @@
 let prompt = require('prompt-sync')();
 let process = require('process');
 
-let exercicio = prompt("Informe o numero do exercicio: ")
-let numero
+let vermelho = '\u001b[' + 31 + ';1m'
+let verde = '\u001b[' + 32 + ';1m'
+let amarelo = '\u001b[' + 33 + ';1m'
+let azul = '\u001b[' + 34 + ';1m'
+let roxo = '\u001b[' + 35 + ';1m'
+let ciano = '\u001b[' + 36 + ';1m'
+
+let numero;
+
+function mensagemCor(cor, mensagem) {
+	return (cor + mensagem + '\x1b[0m');
+}
 
 function numeroValidacao(mensagem) {
 	numero = parseFloat(prompt(mensagem))
 	if (isNaN(numero)){
-		console.log("O valor informado não é um numero. Por favor, tente novamente.");
+		console.log(mensagemCor(vermelho, "O valor informado não é um numero. Por favor, tente novamente."));
 		process.exit(-1)
 	}
 	return (numero)
 }
 
+function stringValidacao(string) {
+	if (!string) {
+		console.log(mensagemCor(vermelho, "Valor vazio não aceito."));
+		process.exit(-1)
+	}
+	return (string)
+}
+
+function asciiMensagem() {
+	console.log(azul
+		+ "\n   ____                _ _ _   _                   _     "
+		+ "\n  / ___|___  _ __   __| (_) |_(_) ___  _ __   __ _| |___ "
+		+ "\n | |   / _ \\| '_ \\ / _` | | __| |/ _ \\| '_ \\ / _` | / __|"
+		+ roxo
+		+ "\n | |__| (_) | | | | (_| | | |_| | (_) | | | | (_| | \\__ \\"
+		+ "\n  \\____\\___/|_| |_|\\__,_|_|\\__|_|\\___/|_| |_|\\__,_|_|___/"
+		+ verde + '\n'
+		+ "\n1 = Calcula acréscimo de 10% em valores menores que 1000"
+		+ "\n2 = Checa se um valor receberá um acréscimo ou não"
+		+ "\n3 = Checa se o seu numero é negativo, positivo ou neutro"
+		+ "\n4 = Checa se um numero é par ou impar"
+		+ "\n5 = Avalia qual é o maior entre dois numeros"
+		+ "\n6 = Calculadora de médias\n");
+}
+
+asciiMensagem();
+
+let exercicio = numeroValidacao(roxo + mensagemCor(amarelo, "Informe o numero do exercicio (1 a 6): "))
+
 switch (exercicio) {
-	case "1":
+	case 1:
 
 		/*
 		Exercício 1:
@@ -24,25 +63,26 @@ switch (exercicio) {
 		desse funcionário.
 		*/
 
-		console.log("===== Calcula acréscimo de 10% em valores menores que 1000 =====");
+		console.log(verde + "\nCalcula acréscimo de 10% em valores menores que 1000\n");
 
-		let nome = prompt("Digite seu nome: ")
-		let cargo = prompt("Digite seu cargo: ")
-		let salarioBase = numeroValidacao("Digite seu salario: ")
+		let nome = stringValidacao(prompt(mensagemCor(amarelo, "Digite seu nome: ") + roxo))
+		let cargo = stringValidacao(prompt(mensagemCor(amarelo, "Digite seu cargo: ") + roxo))
+		let salarioBase = numeroValidacao(mensagemCor(amarelo, "Digite seu salario: ") + roxo)
 		let salarioAcrescido
 
 		if (salarioBase < 1000) {
 			salarioAcrescido = salarioBase + (salarioBase / 10)
-			console.log(`Nome: ${nome}.\nCargo: ${cargo}.`)
-			console.log(`Salario base: ${salarioBase.toFixed(2)}.\nSalario acrescido: ${parseFloat(salarioAcrescido).toFixed(2)}.`)
+			console.log(ciano + `Nome: ` + roxo + `${nome}` + ciano + `.\nCargo: ` + roxo + ` ${cargo}.`)
+			console.log(ciano + `Salario base: ` + roxo + `${salarioBase.toFixed(2)}.\n` + ciano + `Salario acrescido: ` + roxo + ` ${parseFloat(salarioAcrescido).toFixed(2)}.`)
 		}
 		else{
-			console.log(`Nome: ${nome} .\nCargo: ${cargo}.`)
-			console.log(`Salario base: ${salarioBase.toFixed(2)}\nSeu salario não receberá o acrescimo.`);
+			console.log(ciano + `Nome: ` + roxo + `${nome}.\n` + ciano +`Cargo: ` + roxo + `${cargo}.`)
+			console.log(ciano + `Salario base: ` + roxo + `${salarioBase.toFixed(2)}\n` + ciano + `Seu salario não receberá o acrescimo.`);
 		}
+		console.log(mensagemCor(verde, "Fim."));
 		break;
 
-	case "2":
+	case 2:
 
 		/*
 		Exercício 2
@@ -52,19 +92,21 @@ switch (exercicio) {
 		uma mensagem caso o funcionário não tenha direito a aumento.
 		*/
 
-		console.log("===== Checa se um valor receberá um acréscimo ou não. =====");
+		console.log(verde + "Checa se um valor receberá um acréscimo ou não. ");
 
-		let salario = numeroValidacao("Digite seu salario: ")
+		let salario = numeroValidacao(amarelo + "Digite seu salario: ")
 
 		if (salario < 500) {
 			salario += salario / 30
-			console.log("Seu salario foi reajustado para: " + salario.toFixed(2) + ".")
-		} else
-			console.log("Você não tem direito ao reajuste.")
-
+			console.log(ciano + "Seu salario foi reajustado para: " + roxo + salario.toFixed(2) + ".")
+		}
+		else
+			console.log(ciano + "Você não tem direito ao reajuste.")
+		
+		console.log(mensagemCor(verde, "Fim."));
 		break;
 
-	case "3":
+	case 3:
 
 		/*
 		Exercício 3
@@ -72,19 +114,20 @@ switch (exercicio) {
 		se este número é positivo ou negativo.
 		*/
 
-		console.log("===== Checa se o seu numero é negativo, positivo ou neutro. =====");
+		console.log(verde + "Checa se o seu numero é negativo, positivo ou neutro. ");
 
-		numero = numeroValidacao("Digite um numero: ")
+		numero = numeroValidacao(amarelo + "Digite um numero: " + roxo)
 
 		if (numero < 0)
-			console.log("Seu numero é negativo.")
+			console.log(ciano + "Seu numero é negativo.")
 		else if (numero > 0)
-			console.log("Seu numero é positivo")
+			console.log(ciano + "Seu numero é positivo")
 		else
-			console.log("Zero é zero, parça (numero neutro).");
+			console.log(ciano + "Zero é zero, parça (numero neutro).");
+		console.log(mensagemCor(verde, "Fim."));
 		break;
-
-	case "4":
+		
+	case 4:
 
 		/*
 		Exercício 4
@@ -92,19 +135,19 @@ switch (exercicio) {
 		se este número é par ou ímpar.
 		*/
 
-		console.log("===== Checa se um numero é par ou impar. =====");
-		numero = numeroValidacao("Digite um numero: ")
+		console.log(verde + "Checa se um numero é par ou impar. ");
+		numero = numeroValidacao(amarelo + "Digite um numero: " + roxo)
 
 		let restante = numero % 2
 
 		if (restante != 0)
-			console.log("Seu numero é impar.")
+			console.log(ciano + "Seu numero é impar.")
 		else
-			console.log("Seu numero é par")
-
+			console.log(ciano + "Seu numero é par")
+		console.log(mensagemCor(verde, "Fim."));
 		break;
 
-	case "5":
+	case 5:
 
 		/*
 		Exercício 5
@@ -112,22 +155,23 @@ switch (exercicio) {
 		número digitado.
 		*/
 
-		console.log("===== Avalia qual é o maior entre dois numeros =====");
+		console.log(verde + "Avalia qual é o maior entre dois numeros ");
 
-		let numeroUm = numeroValidacao("Digite o primeiro numero: ")
-		let numeroDois = numeroValidacao("Digite o segundo numero: ")
+		let numeroUm = numeroValidacao(amarelo + "Digite o primeiro numero: " + roxo)
+		let numeroDois = numeroValidacao(amarelo + "Digite o segundo numero: " + roxo)
 
 		if (numeroUm > numeroDois)
-			console.log(`Seu numero maior é: ${numeroUm}.`)
+			console.log(ciano + `Seu numero maior é: ` + roxo + `${numeroUm}.`)
 		else if
 			(numeroDois > numeroUm)
-			console.log(`Seu numero maior é: ${numeroDois}.`)
+			console.log(ciano + `Seu numero maior é: ` + roxo + `${numeroDois}.`)
 		else
-			console.log("Seus numeros são iguais")
+			console.log(ciano + "Seus numeros são iguais")
+		console.log(mensagemCor(verde, "Fim."));
 
 		break;
 
-	case "6":
+	case 6:
 
 		/*
 		Exercício 6
@@ -141,28 +185,28 @@ switch (exercicio) {
 			numero = parseFloat(prompt(mensagem))
 
 			if (isNaN(numero) || numero < 0 || numero > 10){
-				console.log("A nota informada não foi apresentada corretamente. Por favor, tente outra vez.");
+				console.log(mensagemCor(vermelho, "A nota informada não foi apresentada corretamente. Por favor, tente outra vez."));
 				process.exit(-1)
 			}
 			return (numero)
 		}
 
-		console.log("===== Calculadora de médias =====\nApresente os valores entre 0 e 10");
+		console.log(verde + "Calculadora de médias \nApresente os valores entre 0 e 10 ");
 
-		let notaUm = notaValidacao(("Digite a primeira nota: "))
-		let notaDois = notaValidacao(("Digite a segunda nota: "))
-		let notaTres = notaValidacao(("Digite a terceira nota: "))
-		let notaQuatro = notaValidacao(("Digite a quarta nota: "))
+		let notaUm = notaValidacao((amarelo + "Digite a primeira nota: " + roxo))
+		let notaDois = notaValidacao((amarelo + "Digite a segunda nota: " + roxo))
+		let notaTres = notaValidacao((amarelo + "Digite a terceira nota: " + roxo))
+		let notaQuatro = notaValidacao((amarelo + "Digite a quarta nota: " + roxo))
 		
 		let media = (notaUm + notaDois + notaTres + notaQuatro) / 4
 		
 		if (media >= 7)
-			console.log(`Média: ${media}. Aluno aprovado.`)
+			console.log(ciano + `Média: ${media}. Aluno aprovado.`)
 		else if (media < 7 && media >= 5)
-			console.log(`Média: ${media}. Aluno em recuperação.`)
+			console.log(amarelo + `Média: ${media}. Aluno em recuperação.`)
 		else
-			console.log(`Média: ${media}. Aluno reprovado.`)
-
+			console.log(vermelho + `Média: ${media}. Aluno reprovado.`)
+		console.log(mensagemCor(verde, "Fim."));
 		break;
 
 	default:
