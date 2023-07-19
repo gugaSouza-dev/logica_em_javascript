@@ -7,7 +7,6 @@ let amarelo = '\u001b[' + 33 + ';1m'
 let azul = '\u001b[' + 34 + ';1m'
 let roxo = '\u001b[' + 35 + ';1m'
 let ciano = '\u001b[' + 36 + ';1m'
-let branco = '\u001b[' + 37 + ';1m'
 
 let numero;
 
@@ -103,9 +102,17 @@ switch (exercicio) {
 		/*
 		7. Calcular a soma dos números de 1 a 100 utilizando a estrutura
 		while.
-		?????????????????????????????????????
 		*/
+		console.log(mensagemCor(verde, "Soma dos numeros de 1 a 100"));
+		let soma = 0;
+		let contador = 0;
 		
+		while (contador <= 100) {
+			soma += contador
+			contador++;
+		}
+		console.log(mensagemCor(azul, soma));
+		console.log(mensagemCor(verde, "Fim."));
 		break;
 	case 8:
 		/*
@@ -119,7 +126,7 @@ switch (exercicio) {
 		while (idade < 18) {
 			idade = numeroValidacao(amarelo + "Digite sua idade: " + ciano)
 			if (idade < 18)
-		console.log(mensagemCor(vermelho, "Idade inválida."));
+				console.log(mensagemCor(vermelho, "Idade inválida."));
 		}
 		console.log(mensagemCor(verde, "Idade válida!"));
 		console.log(mensagemCor(verde, "Fim."));
@@ -145,7 +152,7 @@ switch (exercicio) {
 		console.log(verde + "===== Loop infinito de zeros =====");
 		numero = 1
 		while (numero != 0) {
-			numero = numeroValidacao(amarelo + "Digite sua numero: ")
+			numero = parseInt(prompt(amarelo + "Digite sua numero: "))
 			if (numero != 0)
 			console.log(mensagemCor(vermelho, "Numero inválido."));
 		}
