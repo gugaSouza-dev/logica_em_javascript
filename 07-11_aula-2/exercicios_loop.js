@@ -9,6 +9,8 @@ let roxo = '\u001b[' + 35 + ';1m'
 let ciano = '\u001b[' + 36 + ';1m'
 
 let numero;
+let numeros = []
+let index = 0
 
 function mensagemCor(cor, mensagem) {
 	return (cor + mensagem + '\x1b[0m');
@@ -25,78 +27,80 @@ function numeroValidacao(mensagem) {
 }
 
 function asciiMensagem() {
-	console.log(azul
-					+ "\n██╗      ██████╗  ██████╗ ██████╗ ██╗███╗   ██╗ ██████╗ ███████╗"
-					+ "\n██║     ██╔═══██╗██╔═══██╗██╔══██╗██║████╗  ██║██╔════╝ ██╔════╝"
-					+ "\n██║     ██║   ██║██║   ██║██████╔╝██║██╔██╗ ██║██║  ███╗███████╗"
-					+ roxo
-					+ "\n██║     ██║   ██║██║   ██║██╔═══╝ ██║██║╚██╗██║██║   ██║╚════██║"
-					+ "\n███████╗╚██████╔╝╚██████╔╝██║     ██║██║ ╚████║╚██████╔╝███████║"
-					+ "\n╚══════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝"
-					+ "\n                                                                "
-					+ verde
-					+ "\n1 = Numeros de 1 a 10"
-					+ "\n2 = Numeros pares de 1 a 10"
-					+ "\n3 = Numeros ímpares de 0 a 50"
-					+ "\n4 = ===== Tabuada ====="
-					+ "\n5 = Sequência de Febonacci"
-					+ "\n6 = Numeros pares de 0 a 20"
-					+ "\n7 = Soma dos numeros de 1 a 100"
-					+ "\n8 = ===== Validação de idade ====="
-					+ "\n9 = ===== Contagem regressiva ====="
-					+ "\n10 = ===== Loop infinito de zeros =====\n");
+	console.log(verde
+				+ "\n1 = Numeros de 1 a 10"
+				+ "\n2 = Numeros pares de 1 a 10"
+				+ "\n3 = Numeros ímpares de 0 a 50"
+				+ "\n4 = Tabuada"
+				+ "\n5 = Sequência de Febonacci"
+				+ "\n6 = Numeros pares de 0 a 20"
+				+ "\n7 = Soma dos numeros de 1 a 100"
+				+ "\n8 = Validação de idade"
+				+ "\n9 = Contagem regressiva"
+				+ "\n10 = Loop infinito de zeros\n");
 }
 
-asciiMensagem();
+console.log(azul
+	+ "\n██╗      ██████╗  ██████╗ ██████╗ ██╗███╗   ██╗ ██████╗ ███████╗"
+	+ "\n██║     ██╔═══██╗██╔═══██╗██╔══██╗██║████╗  ██║██╔════╝ ██╔════╝"
+	+ "\n██║     ██║   ██║██║   ██║██████╔╝██║██╔██╗ ██║██║  ███╗███████╗"
+	+ roxo
+	+ "\n██║     ██║   ██║██║   ██║██╔═══╝ ██║██║╚██╗██║██║   ██║╚════██║"
+	+ "\n███████╗╚██████╔╝╚██████╔╝██║     ██║██║ ╚████║╚██████╔╝███████║"
+	+ "\n╚══════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝")
 
-
-let exercicio = 1
-
+	
+	
+	let exercicio = 1
+	
 do {
+	numero = 0
+	numeros = []
+	index = 0
+	asciiMensagem();
 	console.log(mensagemCor(ciano, "Para sair digite: 0"));
 	exercicio = numeroValidacao(roxo + mensagemCor(amarelo, 
-		"Informe o numero do exercicio (1 a 10): "))
+		"Informe o numero do exercicio (1 a 10): ") + roxo)
 
 	switch (exercicio) {
 		case 1:
 			/*
 			1. Imprimir números de 1 a 10 utilizando o loop for.
 			*/
-			console.log(verde + "Numeros de 1 a 10: ");
+			console.log(verde + "\nNumeros de 1 a 10: ");
 			for (let i = 1; i <= 10; i++)
-				console.log(mensagemCor(azul, i));
-			console.log(mensagemCor(verde, "Fim."));
+				numeros[index++] = i
+			console.log(mensagemCor(azul, numeros));
 			break;
 		case 2:
 			/*
 			2. Imprimir números pares de 1 a 10.
 			*/
-			console.log(verde + "Numeros pares de 1 a 10:");
+			console.log(verde + "\nNumeros pares de 1 a 10:");
 			for (let i = 0; i <= 10; i = i + 2)
-				console.log(mensagemCor(azul, i));
-			console.log(mensagemCor(verde, "Fim."));
+				numeros[index++] = i
+			console.log(mensagemCor(azul, numeros));
 			break;
 		case 3:
 			/*
 			3. Faça um programa que imprima os números ímpares de 0 a 50.
 			*/
-			console.log(verde + "Numeros ímpares de 0 a 50:");
+			console.log(verde + "\nNumeros ímpares de 0 a 50:");
 			for (let i = 1; i <= 50; i = i + 2)
-				console.log(mensagemCor(azul, i));
-			console.log(mensagemCor(verde, "Fim."));
+					numeros[index++] = i
+				console.log(mensagemCor(azul, numeros));
 			break;
 		case 4:
 			/*
 			4. Faça um programa que imprima na tela a tabuada de um número
 			qualquer escolhido pelo usuário até o 10.
 			*/
-			console.log(verde + "===== Tabuada =====");
+			console.log(verde + "\nTabuada");
 			let multiplicador = numeroValidacao(amarelo + 
-				"Informe o número que deseja ser multiplicado: ")
+				"Informe o número que deseja ser multiplicado: " + roxo)
 			for (let i = 0; i <= 10; i++)
-				console.log(mensagemCor(roxo, `${multiplicador} * ${i} =`), 
-					(azul, `${multiplicador * i}`));
-			console.log(mensagemCor(verde, "Fim."));
+				console.log(mensagemCor(azul, `${multiplicador} * ${i} =`), 
+					mensagemCor(roxo, `${multiplicador * i}`));
 			break;
 		case 5:
 			/*
@@ -105,7 +109,7 @@ do {
 			function fiboPosicao(fibo, posicao) {
 				console.log(mensagemCor(roxo, `Posição ${posicao}:\t`), mensagemCor(azul, `${fibo}.`))
 			}
-			console.log(verde + "Sequência de Febonacci:");
+			console.log(verde + "Sequência de Febonacci");
 			let t1 = 0, t2 = 1, fibonacci = t1 + t2
 			for (let i = 2; i <= 9; i++){
 				if (t1 == 0){
@@ -117,27 +121,26 @@ do {
 				t2 = fibonacci
 				fibonacci = t1 + t2
 			}
-			console.log(mensagemCor(verde, "Fim."));
 			break;
 		case 6:
 			/*
 			6. Imprimir números pares de 0 a 20 utilizando o loop while.
 			*/
-			console.log(verde + "Numeros pares de 0 a 20:");
+			console.log(verde + "\nNumeros pares de 0 a 20");
 			numero = 0
 			while (numero <= 20) {
 				if (numero%2 == 0)
-					console.log(mensagemCor(azul, numero));
+					numeros[index++] = numero
 				numero++
 			}
-			console.log(mensagemCor(verde, "Fim."));
+			console.log(mensagemCor(azul, numeros));
 			break;
 		case 7:
 			/*
 			7. Calcular a soma dos números de 1 a 100 utilizando a estrutura
 			while.
 			*/
-			console.log(mensagemCor(verde, "Soma dos numeros de 1 a 100"));
+			console.log(mensagemCor(verde, "\nSoma dos numeros de 1 a 100"));
 			let soma = 0;
 			let contador = 0;
 			
@@ -146,7 +149,6 @@ do {
 				contador++;
 			}
 			console.log(mensagemCor(azul, soma));
-			console.log(mensagemCor(verde, "Fim."));
 			break;
 		case 8:
 			/*
@@ -155,35 +157,33 @@ do {
 			idade e mostre uma mensagem quando a idade do usuário for
 			maior que 18.
 			*/
-			console.log(verde + "===== Validação de idade =====");
+			console.log(verde + "\nValidação de idade");
 			let idade = 0
 			while (idade < 18) {
 				idade = numeroValidacao(amarelo + "Digite sua idade: " + ciano)
 				if (idade < 18)
 					console.log(mensagemCor(vermelho, "Idade inválida."));
 			}
-			console.log(mensagemCor(verde, "Idade válida!"));
-			console.log(mensagemCor(verde, "Fim."));
+			console.log(mensagemCor(verde, "\nIdade válida!"));
 			break;
 		case 9:
 			/*
 			9. Faça um programa que receba um número do usuário e mostre
 			console a contagem regressiva até 0.
 			*/
-			console.log(verde + "===== Contagem regressiva =====");
-			numero = numeroValidacao(amarelo + "Informe seu numero: ")
+			console.log(verde + "\nContagem regressiva ");
+			numero = numeroValidacao(amarelo + "Informe seu numero para iniciar a contagem: ")
 			while (numero >= 0) {
 				console.log(mensagemCor(azul, numero));
 				numero--;
 			}
-			console.log(mensagemCor(verde, "Fim."));
 			break;
 		case 10:
 			/*
 			10. Faça um programa que receba um número do usuário e continue
 			a pedir o número se o numero for diferente de 0.
 			*/
-			console.log(verde + "===== Loop infinito de zeros =====");
+			console.log(verde + "\nLoop infinito de zeros ");
 			numero = 1
 			while (numero != 0) {
 				numero = parseInt(prompt(amarelo + "Digite sua numero: "))
@@ -191,11 +191,11 @@ do {
 				console.log(mensagemCor(vermelho, "Numero inválido."));
 			}
 			console.log(mensagemCor(verde, "Valor valido!"));
-			console.log(mensagemCor(verde, "Fim."));
 			break;
 		default:
 			if (exercicio != 0)
 				console.log(mensagemCor(vermelho, "Exercicio não encontrado. Tente um numero de 1 a 10."))
 			break;
 	}
+	console.log(mensagemCor(verde, "Fim."));
 } while (exercicio != 0);
