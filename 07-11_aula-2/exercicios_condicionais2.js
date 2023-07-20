@@ -1,5 +1,4 @@
 let prompt = require('prompt-sync')();
-const { Console } = require('console');
 let process = require('process');
 
 let vermelho = '\u001b[' + 31 + ';1m'
@@ -26,27 +25,29 @@ function numeroValidacao(mensagem) {
 }
 
 function asciiMensagem() {
-	console.log(azul
-					+ "\n   ____                _ _ _   _                   _       ____            _     ___ ___ "
-					+ "\n  / ___|___  _ __   __| (_) |_(_) ___  _ __   __ _| |___  |  _ \\ __ _ _ __| |_  |_ _|_ _|"
-					+ "\n | |   / _ \\| '_ \\ / _` | | __| |/ _ \\| '_ \\ / _` | / __| | |_) / _` | '__| __|  | | | | "
-					+ roxo
-					+ "\n | |__| (_) | | | | (_| | | |_| | (_) | | | | (_| | \\__ \\ |  __/ (_| | |  | |_   | | | | "
-					+ "\n  \\____\\___/|_| |_|\\__,_|_|\\__|_|\\___/|_| |_|\\__,_|_|___/ |_|   \\__,_|_|   \\__| |___|___|"
-					+ ciano + '\n'
-					+ "\n1 = Login do Ademir"
-					+ "\n2 = Dias da Semana"
-					+ "\n3 = Checa ordenação de três numeros"
-					+ "\n4 = Verificação de idade"
-					+ "\n5 = Calculador de descontos"
-					+ "\n6 = Calculadora de IMC\n");
+	console.log(verde
+				+ "\n1 = Login do Ademir"
+				+ "\n2 = Dias da Semana"
+				+ "\n3 = Checa ordenação de três numeros"
+				+ "\n4 = Verificação de idade"
+				+ "\n5 = Calculador de descontos"
+				+ "\n6 = Calculadora de IMC");
 }
 
-asciiMensagem();
+console.log(azul
+	+ "\n   ____                _ _ _   _                   _       ____            _     ___ ___ "
+	+ "\n  / ___|___  _ __   __| (_) |_(_) ___  _ __   __ _| |___  |  _ \\ __ _ _ __| |_  |_ _|_ _|"
+	+ "\n | |   / _ \\| '_ \\ / _` | | __| |/ _ \\| '_ \\ / _` | / __| | |_) / _` | '__| __|  | | | | "
+	+ roxo
+	+ "\n | |__| (_) | | | | (_| | | |_| | (_) | | | | (_| | \\__ \\ |  __/ (_| | |  | |_   | | | | "
+	+ "\n  \\____\\___/|_| |_|\\__,_|_|\\__|_|\\___/|_| |_|\\__,_|_|___/ |_|   \\__,_|_|   \\__| |___|___|"
+	);
+
 
 let exercicio = 1
 
 do {
+	asciiMensagem();
 	console.log(mensagemCor(ciano, "\nPara sair digite 0"));
 	exercicio = numeroValidacao(mensagemCor(amarelo, "Informe o numero do exercicio (1 a 6): ") + roxo)
 	switch (exercicio) {
@@ -69,7 +70,7 @@ do {
 				console.log(mensagemCor(verde, "Login feito com sucesso. Bem vindo, Ademir."));
 			else
 				console.log(mensagemCor(vermelho, "Você não é o Ademir. Login incorreto."));
-			console.log(mensagemCor(verde, "Fim."));
+			
 			break;
 	
 		case 2:
@@ -88,31 +89,31 @@ do {
 			switch (dia) {
 				case 1:
 					console.log(mensagemCor(azul, "Segunda-feira."));
-					console.log(mensagemCor(verde, "Fim."));
+					
 					break;
 				case 2:
 					console.log(mensagemCor(azul, "Terça-feira."));
-					console.log(mensagemCor(verde, "Fim."));
+					
 					break;
 				case 3:
 					console.log(mensagemCor(azul, "Quarta-feira."));
-					console.log(mensagemCor(verde, "Fim."));
+					
 					break;
 				case 4:
 					console.log(mensagemCor(azul, "Quinta-feira."));
-					console.log(mensagemCor(verde, "Fim."));
+					
 					break;
 				case 5:
 					console.log(mensagemCor(azul, "Sexta-feira."));
-					console.log(mensagemCor(verde, "Fim."));
+					
 					break;
 				case 6:
 					console.log(mensagemCor(azul, "Sabado."));
-					console.log(mensagemCor(verde, "Fim."));
+					
 					break;
 				case 7:
 					console.log(mensagemCor(azul, "Domingo."));
-					console.log(mensagemCor(verde, "Fim."));
+					
 					break;
 				default:
 					console.log("O numero informado não corresponde á um dia da semana.");
@@ -141,7 +142,7 @@ do {
 				console.log(mensagemCor(verde, "Seus números estão em ordem crescente."));
 			else
 				console.log(mensagemCor(verde, "Seus numeros são iguais."));
-			console.log(mensagemCor(verde, "Fim."));
+			
 	
 			break;
 	
@@ -155,7 +156,7 @@ do {
 	
 			console.log(verde + "\nVerificação de idade.\n");
 	
-			let anoNascimento = numeroValidacao(amarelo + "Informe a sua data de nascimento: " + roxo)
+			let anoNascimento = numeroValidacao(amarelo + "Informe o seu ano de nascimento: " + roxo)
 			let anoAtual = numeroValidacao(amarelo + "Informe o ano que estamos: " + roxo)
 			let idade = anoAtual - anoNascimento
 	
@@ -164,7 +165,7 @@ do {
 			else
 				console.log(mensagemCor(azul, 
 					"Parabéns! Você ainda não é um maior de idade. Aproveite, pois vai acabar."));
-			console.log(mensagemCor(verde, "Fim."));
+			
 			break;
 		
 		case 5:
@@ -195,7 +196,7 @@ do {
 				valor -= valor / 20
 	
 			console.log(ciano + `Valor da compra com desconto: ` + roxo + `R$${valor.toFixed(2)}`);
-			console.log(mensagemCor(verde, "Fim."));
+			
 			break;
 			
 		case 6:
@@ -215,7 +216,7 @@ do {
 			IMC maior ou igual a 40.0: Obesidade grau 3
 			*/
 	
-			console.log(verde + "Calculadora de IMC");
+			console.log(verde + "\nCalculadora de IMC");
 	
 			let peso = numeroValidacao(amarelo + "Informe o peso em KG: " + roxo)
 			let altura = numeroValidacao(amarelo + "Informe a altura em metros: " + roxo)
@@ -233,7 +234,7 @@ do {
 				console.log(mensagemCor(vermelho, "Obesidade grau 2"));
 			else
 				console.log(mensagemCor(vermelho, "Obesidade grau 3"));
-			console.log(mensagemCor(verde, "Fim."));
+			
 			break;
 	
 		default:
@@ -241,5 +242,5 @@ do {
 				console.log(mensagemCor(vermelho, "Exercicio não encontrado. Tente um numero de 1 a 10."))
 			break;
 	}
-	
+	console.log(mensagemCor(verde, "Fim."));
 } while (exercicio != 0);
