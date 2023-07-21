@@ -14,6 +14,10 @@ export const roxo = '\u001b[' + 35 + ';1m'
 export const ciano = '\u001b[' + 36 + ';1m'
 export const reset = '\x1b[0m'
 
+export let numero
+export let numeroUm
+export let numeroDois
+
 let numero;
 let opcao
 
