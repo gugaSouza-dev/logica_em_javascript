@@ -5,9 +5,11 @@ import { mensagemCor, numeroValidacao, comandos } from "./main.js";
 import { vermelho, verde, amarelo,
 		azul, roxo, ciano } from "./main.js";
 
+//NUMEROS
+import { numero, numeroUm, numeroDois } from "./main.js"
+
 const prompt = promptSync();
 
-let numero;
 let exercicio
 
 function stringValidacao(string) {
@@ -173,8 +175,6 @@ export function conditionalsUm(params) {
 					Faça um programa receba dois valores e imprima qual é o maior
 					número digitado.
 					*/
-					let numeroUm
-					let numeroDois
 			
 					console.log(verde + "\nAvalia qual é o maior entre dois numeros ");
 			

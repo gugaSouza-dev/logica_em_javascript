@@ -3,7 +3,7 @@ import { mensagemCor, numeroValidacao, comandos } from "./main.js";
 
 //CORES
 import { vermelho, verde, amarelo,
-		azul, roxo, ciano } from "./main.js";
+		azul, roxo } from "./main.js";
 
 const prompt = promptSync();
 
