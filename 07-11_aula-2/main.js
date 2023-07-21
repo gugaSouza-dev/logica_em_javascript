@@ -2,6 +2,7 @@ import promptSync from "prompt-sync";
 import { exit } from 'process';
 import { loopings } from "./exercicios_loop.js";
 import { conditionalsUm } from "./exercicios_condicionais.js";
+import { conditionalsDois } from "./exercicios_condicionais2.js";
 
 const prompt = promptSync();
 
@@ -73,12 +74,13 @@ do {
 	opcao = numeroValidacao(opcao)
 	switch (opcao) {
 		case 1:
-			loopings()
-			break;
-		case 2:
 			conditionalsUm()
 			break;
+		case 2:
+			conditionalsDois()
+			break;
 		case 3:
+			loopings()
 			break;
 		default:
 			break;
