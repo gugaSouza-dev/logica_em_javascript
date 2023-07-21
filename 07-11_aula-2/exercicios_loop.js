@@ -1,5 +1,5 @@
 import promptSync from "prompt-sync";
-import { mensagemCor, numeroValidacao } from "./main.js";
+import { mensagemCor, numeroValidacao, comandos } from "./main.js";
 
 //CORES
 import { vermelho, verde, amarelo,
@@ -11,7 +11,7 @@ let numero;
 let numeros = []
 let index = 0
 
-function opcoesLoopings() {
+function opcoes() {
 	console.log(verde
 				+ "\n1 = Numeros de 1 a 10"
 				+ "\n2 = Numeros pares de 1 a 10"
@@ -40,21 +40,19 @@ export function loopings(params) {
 	let exercicio
 
 	asciiArtLoopings()
-	opcoesLoopings();
+	opcoes();
 
 	do {
 		numero = 0
 		numeros = []
 		index = 0
 
-		console.log(mensagemCor(ciano, "Para sair, digite:" + roxo + " 0"
-		+ ciano +"\nPara mostrar as opções, digite: " + roxo + "op"));
-
+		comandos()
 		exercicio = prompt(mensagemCor(amarelo,
 			"Informe o numero do exercicio (1 a 10): ") + roxo)
 		exercicio = numeroValidacao(exercicio)
 		if (exercicio == "op")
-			opcoesLoopings()
+			opcoes()
 		else if (!isNaN(exercicio))
 		{	
 			switch (exercicio) {
