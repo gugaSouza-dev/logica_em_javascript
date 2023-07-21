@@ -1,6 +1,7 @@
 import promptSync from "prompt-sync";
 import { exit } from 'process';
 import { loopings } from "./exercicios_loop.js";
+import { conditionalsUm } from "./exercicios_condicionais.js";
 
 const prompt = promptSync();
 
@@ -26,6 +27,8 @@ export function numeroValidacao(numero) {
 		console.log(reset);
 		exit(0)
 	}
+	if (numero == "op")
+		return (numero)
 	if (isNaN(parseFloat(numero))){
 		console.log(mensagemCor(vermelho, 
 			"O valor informado não é um numero. Por favor, tente novamente."));
@@ -33,6 +36,12 @@ export function numeroValidacao(numero) {
 	}
 	return (parseFloat(numero))
 }
+
+export function comandos() {	
+	console.log(mensagemCor(ciano, "Para sair, digite:" + roxo + " 0"
+	+ ciano +"\nPara mostrar as opções, digite: " + roxo + "op"));
+}
+
 
 function asciiArtMenu(){
 	console.log(azul
@@ -67,6 +76,7 @@ do {
 			loopings()
 			break;
 		case 2:
+			conditionalsUm()
 			break;
 		case 3:
 			break;
