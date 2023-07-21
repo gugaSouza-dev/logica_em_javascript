@@ -18,7 +18,6 @@ export let numero
 export let numeroUm
 export let numeroDois
 
-let numero;
 let opcao
 
 export function mensagemCor(cor, mensagem) {
