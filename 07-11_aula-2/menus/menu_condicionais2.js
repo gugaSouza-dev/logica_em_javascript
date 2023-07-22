@@ -54,7 +54,11 @@ export function conditionalsDois() {
 					login(user)
 					break;
 				case 2:
-					diaDaSemana()
+					let dia
+
+					console.log(mensagemCor(verde, "\nDias da Semana.\n"));
+					dia = numeroValidacao(prompt(mensagemCor(amarelo, "Informe um numero de 1 a 7: ") + roxo))
+					diaDaSemana(dia)
 					break;
 				case 3:
 					let numeroUm
