@@ -5,7 +5,11 @@ Exercícios de lógica de programação em javascript
 
 <p>Verifique se o Node está instalado: Abra um terminal (digite 'cmd' na pesquisa do windows) e execute o comando 'node -v'</p>
 <p>Caso o comando não seja reconhecido significa que o Node não está instalado na sua maquina, mas sem pânico. Você pode baixa-lo clickando <a href="https://nodejs.org/en/download">aqui</a>. É rapidinho :D.</p>
-<p>Com o node instalado, abra um terminal na pasta dos exercicios e execute o seguinte comando: node nome_do_arquivo.js<br>Exemplo: node exercicios.js <br> Você pode abrir um terminal clickando com o botão direito do mouse na pasta e selecionando a opção "Abrir no Terminal"</p>
+<p>Com o node instalado, abra um terminal na pasta dos exercicios e execute o seguinte comando: node main.js<br> Você pode abrir um terminal clickando com o botão direito do mouse na pasta e selecionando a opção "Abrir no Terminal"</p>
+
+![Print do terminal com as instruções dos conjuntos de exercícios: "1: Exercícios condicionais 1"
+					"2: Exercícios condicionais 2"
+					"3: Exercícios de loopings"](/img/menu.png "menu inicial")
 
 ![Print do terminal com as instruções sobre a parte dois dos exercicios de condições: "1:Calcula acréscimo de 10% em valores menores que 1000"
 					"2: Checa se um valor receberá um acréscimo ou não"
