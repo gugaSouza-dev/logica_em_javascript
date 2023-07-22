@@ -26,9 +26,9 @@ function notaValidacao(mensagem, numero) {
 	return (numero)
 }
 
-function mediaCalculator(notaUm, notaDois, notaTres, notaQuatro) {
+function mediaCalculator(notas) {
 	let media
-	media = (notaUm + notaDois + notaTres + notaQuatro) / 4
+	media = (notas.notaUm + notas.notaDois + notas.notaTres + notas.notaQuatro) / 4
 
 	if (media >= 7)
 		console.log(ciano + `Média: ${media}. Aluno aprovado.`)
@@ -189,25 +189,22 @@ export function media(numero) {
 	5.0 e 7,0 ou a mensagem de REPROVADO para média inferior a 5,0.
 	*/
 
-	let notaUm
-	let notaDois
-	let notaTres
-	let notaQuatro
+	let notas = {notaUm: 0, notaDois: 0, notaTres: 0, notaQuatro: 0}
 
 	console.log(verde + "\nCalculadora de médias \nApresente os valores entre 0 e 10 ");
 
-	notaUm = notaValidacao((amarelo + "Digite a primeira nota: " + roxo), numero)
-	if (notaUm == -1)
+	notas.notaUm = notaValidacao((amarelo + "Digite a primeira nota: " + roxo), numero)
+	if (notas.notaUm == -1)
 		return(-1)
-	notaDois = notaValidacao((amarelo + "Digite a segunda nota: " + roxo), numero)
-	if (notaDois == -1)
+	notas.notaDois = notaValidacao((amarelo + "Digite a segunda nota: " + roxo), numero)
+	if (notas.notaDois == -1)
 		return(-1)
-	notaTres = notaValidacao((amarelo + "Digite a terceira nota: " + roxo), numero)
-	if (notaTres == -1)
+	notas.notaTres = notaValidacao((amarelo + "Digite a terceira nota: " + roxo), numero)
+	if (notas.notaTres == -1)
 		return(-1)
-	notaQuatro = notaValidacao((amarelo + "Digite a quarta nota: " + roxo), numero)
-	if (notaQuatro == -1)
+	notas.notaQuatro = notaValidacao((amarelo + "Digite a quarta nota: " + roxo), numero)
+	if (notas.notaQuatro == -1)
 		return(-1)
 
-	mediaCalculator(notaUm, notaDois, notaTres, notaQuatro)
+	mediaCalculator(notas)
 }
