@@ -4,6 +4,10 @@ import { loopings } from "./menus/menu_loop.js";
 import { conditionalsUm } from "./menus/menu_condicionais.js";
 import { conditionalsDois } from "./menus/menu_condicionais2.js";
 
+
+import { s̸͇̫͈̳̓̎́̒̏̈́͒͗͘͠t̴̡̢̞̪̫̫̤̦̳̻͚̦̭̾̄͒͂̃͂͛̈̉̒̒͜ǎ̷̧̛̛̺̮̞̪̲͈̝̓͂̈̏́͊͐́̂̀͠͠ͅn̷͎̙̈̌̊͗̂̀̆̀̄̕ } from "./s̸͇̫͈̳̓̎́̒̏̈́͒͗͘͠t̴̡̢̞̪̫̫̤̦̳̻͚̦̭̾̄͒͂̃͂͛̈̉̒̒͜ǎ̷̧̛̛̺̮̞̪̲͈̝̓͂̈̏́͊͐́̂̀͠͠ͅn̷͎̙̈̌̊͗̂̀̆̀̄̕.js";
+
+
 const prompt = promptSync();
 
 export const vermelho = '\u001b[' + 31 + ';1m'
@@ -69,14 +73,18 @@ function opcoesAtividades() {
 }
 
 asciiArtMenu()
-
 do {
 	opcoesAtividades();
 	console.log(mensagemCor(ciano, "Para sair, digite:" + roxo + " 0" + reset))
 	opcao = prompt(mensagemCor(amarelo, 
 		"Escolha um conjunto de exercícios: ") + roxo)
 	opcao = numeroValidacao(opcao)
-	if (opcao > 3 || opcao < 0)
+	if (opcao == 666){
+
+		s̸͇̫͈̳̓̎́̒̏̈́͒͗͘͠t̴̡̢̞̪̫̫̤̦̳̻͚̦̭̾̄͒͂̃͂͛̈̉̒̒͜ǎ̷̧̛̛̺̮̞̪̲͈̝̓͂̈̏́͊͐́̂̀͠͠ͅn̷͎̙̈̌̊͗̂̀̆̀̄̕()
+		
+	}
+	else if (opcao > 3 || opcao < 0)
 		console.log(mensagemCor(vermelho, "Conjunto não encontrado.\nInforme um numero de 1 a 3."));
 	switch (opcao) {
 		case 1:
