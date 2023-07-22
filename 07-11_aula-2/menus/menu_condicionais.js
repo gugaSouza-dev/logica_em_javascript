@@ -1,12 +1,12 @@
 import promptSync from "prompt-sync";
-import { mensagemCor, numeroValidacao, comandos } from "./main.js";
+import { mensagemCor, numeroValidacao, comandos } from "../main.js";
 
 //CORES
 import { vermelho, verde, amarelo,
-		azul, roxo, ciano } from "./main.js";
+		azul, roxo, ciano } from "../main.js";
 
 //NUMEROS
-import { numero, numeroUm, numeroDois } from "./main.js"
+import { numero, numeroUm, numeroDois } from "../main.js"
 
 const prompt = promptSync();
 
@@ -42,7 +42,7 @@ function asciiArtConditionals() {
 }
 
 
-export function conditionalsUm(params) {
+export function conditionalsUm() {
 	asciiArtConditionals()
 	opcoes();
 	do {

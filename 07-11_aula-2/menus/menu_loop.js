@@ -1,5 +1,5 @@
 import promptSync from "prompt-sync";
-import { mensagemCor, numeroValidacao, comandos } from "./main.js";
+import { mensagemCor, numeroValidacao, comandos } from "../main.js";
 
 //CORES
 import { vermelho, verde, amarelo,
@@ -36,7 +36,7 @@ function asciiArtLoopings(){
 	+ "\n╚══════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝")
 }
 
-export function loopings(params) {
+export function loopings() {
 	let exercicio
 
 	asciiArtLoopings()

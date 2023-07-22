@@ -1,8 +1,8 @@
 import promptSync from "prompt-sync";
 import { exit } from 'process';
-import { loopings } from "./exercicios_loop.js";
-import { conditionalsUm } from "./exercicios_condicionais.js";
-import { conditionalsDois } from "./exercicios_condicionais2.js";
+import { loopings } from "./menu_loop.js";
+import { conditionalsUm } from "./menus/menu_condicionais.js";
+import { conditionalsDois } from "./menu_condicionais2.js";
 
 const prompt = promptSync();
 

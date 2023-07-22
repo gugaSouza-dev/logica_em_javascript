@@ -1,5 +1,5 @@
 import promptSync from "prompt-sync";
-import { mensagemCor, numeroValidacao, comandos } from "./main.js";
+import { mensagemCor, numeroValidacao, comandos } from "../main.js";
 
 //CORES
 import { vermelho, verde, amarelo,
@@ -21,7 +21,7 @@ function opcoes() {
 				+ "\n6 = Calculadora de IMC\n");
 }
 
-function asciiArt(params) {
+function asciiArt() {
 	console.log(azul
 		+ "\n   ____                _ _ _   _                   _       ____            _     ___ ___ "
 		+ "\n  / ___|___  _ __   __| (_) |_(_) ___  _ __   __ _| |___  |  _ \\ __ _ _ __| |_  |_ _|_ _|"
