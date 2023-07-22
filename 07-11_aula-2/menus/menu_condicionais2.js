@@ -46,7 +46,12 @@ export function conditionalsDois() {
 		{
 			switch (exercicio) {
 				case 1:
-					login()
+					let user = {usuario: "", senha: ""}
+
+					console.log(verde, "\nLogin do Ademir.\n");
+					user.usuario = prompt(mensagemCor(amarelo, "Informe seu usuário: ") + roxo)
+					user.senha = prompt(mensagemCor(amarelo, "Informe sua senha: ") + roxo)
+					login(user)
 					break;
 				case 2:
 					diaDaSemana()

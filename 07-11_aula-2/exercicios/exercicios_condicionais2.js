@@ -7,7 +7,7 @@ import { vermelho, verde, amarelo,
 
 const prompt = promptSync();
 
-export function login() {
+export function login(user) {
 	/*
 	Exercício 1: Verificação de login
 	Escreva um programa que solicita ao usuário um nome de usuário e uma senha. Verifique se o
@@ -16,12 +16,7 @@ export function login() {
 	foi bem-sucedido ou não.
 	*/
 
-	console.log(verde, "\nLogin do Ademir.\n");
-
-	let usuario = prompt(mensagemCor(amarelo, "Informe seu usuário: ") + roxo)
-	let senha = prompt(mensagemCor(amarelo, "Informe sua senha: ") + roxo)
-
-	if (usuario == "admin" && senha == "senha123")
+	if (user.usuario == "admin" && user.senha == "senha123")
 		console.log(mensagemCor(verde, "Login feito com sucesso. Bem vindo, Ademir."));
 	else
 		console.log(mensagemCor(vermelho, "Você não é o Ademir. Login incorreto."));
